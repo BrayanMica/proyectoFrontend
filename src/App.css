@@ -1,0 +1,175 @@
+/* App.css - Main Application Styles */
+
+/* --- Reset and Base Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0056b3;
+  --primary-hover: #003d80;
+  --secondary-color: #00a0dc;
+  --accent-color: #ff6b00;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-heading: 'Roboto', sans-serif;
+  --border-radius: 4px;
+  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--gray-800);
+  background-color: var(--gray-200);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-main);
+  transition: var(--transition);
+}
+
+/* --- App Container --- */
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* --- Loading Animation --- */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--gray-300);
+  border-top: 5px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- Authentication Modal --- */
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.auth-modal {
+  background-color: #fff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  position: relative;
+  animation: modalFade 0.3s ease-in-out;
+}
+
+@keyframes modalFade {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: var(--gray-600);
+}
+
+.close-modal-btn:hover {
+  color: var(--danger-color);
+}
+
+.auth-modal h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+}
+
+/* Customize Auth UI */
+.auth-container {
+  width: 100%;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.auth-button:hover {
+  background-color: var(--primary-hover);
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--gray-400);
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+}
+
+.auth-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
