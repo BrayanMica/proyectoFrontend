@@ -11,7 +11,7 @@ const PatientInicio = ({ user }) => {
 
     return (
         <section className="welcome-section card">
-            <h2>{getGreeting()}</h2>
+            <h2>{getGreeting()}, {user.name}</h2>
             <p>Esta es tu siguiente cita:</p>
             <div className="welcome-content">
                 <img
@@ -20,7 +20,8 @@ const PatientInicio = ({ user }) => {
                 />
                 <div className="welcome-text">
                     <h3>Tu próxima cita:</h3>
-
+                    <p><strong>{user.nextAppointment.doctor}</strong></p>
+                    <p>{user.nextAppointment.date}</p>
                 </div>
             </div>
         </section>
