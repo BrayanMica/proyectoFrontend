@@ -22,7 +22,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [userRole, setUserRole] = useState(null);
-  //console.log('Session:', session);
 
   useEffect(() => {
     setLoading(true);
@@ -74,8 +73,10 @@ function App() {
 
   // Function to render the correct dashboard based on user role
   const renderDashboard = () => {
+
+    console.log('Rendering dashboard for role:', session);
     switch (userRole) {
-      case '-':
+      case 'admin':
         return (
           <DashboardAdministrador 
             session={session} 
@@ -83,7 +84,7 @@ function App() {
             onSignOut={handleSignOut} 
           />
         );
-      case 'admin':
+      case 'doctor':
         return (
           <DashboardMedico 
             session={session} 

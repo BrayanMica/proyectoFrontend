@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../Dashboard.css';
-
-
+import GestionMedico from "../Medico/GestionMedico.jsx";
+import ViewProfile from "../Medico/ViewProfile.jsx";
+import ScheduleView from '../Medico/ScheduleView.jsx';
 // This is the General Overlay 2 component shown after login
 const Dashboard = ({ session, supabase, onSignOut }) => {
   const [userDetails, setUserDetails] = useState(null);
@@ -100,13 +101,13 @@ const Dashboard = ({ session, supabase, onSignOut }) => {
   ) : (() => {
     switch (activeSide) {
       case "overview":
-        return <h1>Componente de inicio de medicos</h1>;
-      case "horarios":
-        return <h1>Componente para establecer</h1>;
+        return <GestionMedico supabase={supabase} session={session} />;
+        case "horarios":
+        return <ScheduleView  session={session} />;
       case "Historial":
         return <h1>Componente para ver Historial</h1>;
       case "actualizar_perfil":
-        return <h1>Componente para ver medicos</h1>;
+          return <ViewProfile supabase={supabase} session={session} />;
       default:
         return <h1>Componente predeterminado que se muestra al inicio</h1>;
     }
