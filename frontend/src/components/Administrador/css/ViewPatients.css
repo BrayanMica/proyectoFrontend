@@ -1,0 +1,334 @@
+/* ViewPatients.css - Diseño Profesional con Tabla Responsiva */
+:root {
+  /* Paleta de colores profesional */
+  --primary-color: #2c3e50;      /* Azul oscuro */
+  --secondary-color: #3498db;    /* Azul brillante */
+  --tertiary-color: #9b59b6;     /* Púrpura */
+  --warning-color: #f39c12;      /* Amarillo-naranja */
+  --danger-color: #e74c3c;       /* Rojo */
+  --background-light: #ecf0f1;   /* Gris claro */
+  --text-color: #2c3e50;         /* Texto principal */
+  --text-muted: #7f8c8d;         /* Texto secundario */
+}
+
+.view-patients-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+  transition: all 0.3s ease;
+  padding-bottom: 20px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  position: relative; /* Asegura posicionamiento correcto */
+}
+
+.view-patients-container h3 {
+  background: linear-gradient(135deg, var(--tertiary-color), var(--secondary-color));
+  color: white;
+  padding: 15px 25px;
+  margin: 0 0 20px 0;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Contenedor responsivo para la tabla */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.view-patients-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 0;
+}
+
+.view-patients-table thead {
+  background: linear-gradient(135deg, var(--tertiary-color), var(--secondary-color));
+}
+
+.view-patients-table thead tr th {
+  color: white;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border: none;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Estilos para las filas de la tabla */
+.view-patients-table tbody tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.view-patients-table tbody tr:hover {
+  background-color: var(--background-light);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.view-patients-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.view-patients-table tbody td {
+  padding: 12px 20px;
+  vertical-align: middle;
+  border: none;
+}
+
+/* Avatar de paciente */
+.avatar-img {
+  border: 3px solid white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+/* Botón de dar de baja mejorado */
+.deactivate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background-color: var(--warning-color);
+  border-color: var(--warning-color);
+}
+
+.deactivate-btn:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(243, 156, 18, 0.2);
+}
+
+/* Efecto hover para botones */
+.deactivate-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.deactivate-btn:hover::before {
+  left: 0;
+}
+
+/* Estilos para el modal personalizado */
+.custom-modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Valor muy alto para asegurar que esté por encima de todo */
+}
+
+.custom-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+}
+
+.custom-modal-container {
+  background-color: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  z-index: 10000;
+  box-shadow: 0 15px 35px rgba(50,50,93,.2), 0 5px 15px rgba(0,0,0,.15);
+  animation: modalFadeIn 0.3s ease;
+  overflow: hidden;
+}
+
+@keyframes modalFadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.custom-modal-header {
+  background: linear-gradient(135deg, var(--tertiary-color), var(--secondary-color));
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none;
+}
+
+.custom-modal-title {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.custom-modal-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.custom-modal-close:hover {
+  opacity: 1;
+}
+
+.custom-modal-body {
+  padding: 25px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.custom-modal-footer {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.custom-modal-btn-cancel {
+  background-color: #95a5a6;
+  border-color: #95a5a6;
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+.custom-modal-btn-confirm {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+.warning-icon {
+  color: var(--warning-color);
+}
+
+/* Ajustes responsivos reales para la tabla */
+@media (max-width: 992px) {
+  .view-patients-table thead {
+      display: none; /* Ocultar encabezados en pantallas pequeñas */
+  }
+  
+  .view-patients-table tbody tr {
+      display: block;
+      margin-bottom: 20px;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  
+  .view-patients-table tbody td {
+      display: block;
+      text-align: right;
+      padding: 15px;
+      position: relative;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .view-patients-table tbody td:last-child {
+      border-bottom: none;
+  }
+  
+  .view-patients-table tbody td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.85em;
+      color: var(--primary-color);
+  }
+  
+  .patient-info {
+      flex-direction: row;
+      justify-content: flex-end;
+      text-align: right;
+  }
+  
+  .action-buttons-cell {
+      display: flex !important;
+      justify-content: center !important;
+      text-align: center !important;
+  }
+  
+  .action-buttons-cell::before {
+      display: none !important;
+  }
+  
+  .deactivate-btn {
+      width: 100%;
+      max-width: 200px;
+  }
+
+  .custom-modal-container {
+      width: 95%;
+      margin: 0 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .view-patients-container h3 {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+  }
+  
+  .patient-info {
+      flex-direction: column;
+      align-items: flex-end;
+  }
+  
+  .patient-info .me-2 {
+      display: none;
+  }
+
+  .custom-modal-footer {
+      flex-direction: column;
+  }
+
+  .custom-modal-btn-cancel,
+  .custom-modal-btn-confirm {
+      width: 100%;
+  }
+}

@@ -1,0 +1,81 @@
+/* Reemplazo completo para los estilos del sidebar-nav y sidebar-link */
+
+/* --- Sidebar Navigation --- */
+.sidebar-nav {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav ul li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.sidebar-nav ul li:last-child {
+  border-bottom: none;
+}
+
+.sidebar-link {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  color: var(--gray-700, #495057);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.sidebar-link:hover {
+  background-color: rgba(0,0,0,0.05);
+  color: var(--primary-color, #0056b3);
+  text-decoration: none;
+}
+
+.sidebar-link.active {
+  background-color: var(--primary-color, #0056b3);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sidebar-link .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Asegúrate de que el contenido principal no afecte al sidebar */
+.main-content {
+  padding: 2rem;
+  overflow-x: auto;
+  flex: 1;
+  width: calc(100% - 250px);
+  margin-left: auto;
+  box-sizing: border-box;
+}
+
+/* Media queries */
+@media (max-width: 992px) {
+  .dashboard-sidebar,
+  .sidebar-nav ul li,
+  .sidebar-link {
+    width: 100%;
+  }
+  
+  .main-content {
+    width: 100%;
+  }
+}

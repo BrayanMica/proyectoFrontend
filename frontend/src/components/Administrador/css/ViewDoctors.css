@@ -1,0 +1,360 @@
+/* ViewDoctors.css - Diseño Profesional con Tabla Responsiva */
+:root {
+  /* Paleta de colores profesional */
+  --primary-color: #2c3e50;      /* Azul oscuro */
+  --secondary-color: #2980b9;    /* Azul brillante */
+  --tertiary-color: #3498db;     /* Azul claro */
+  --warning-color: #f39c12;      /* Amarillo-naranja */
+  --danger-color: #e74c3c;       /* Rojo */
+  --background-light: #ecf0f1;   /* Gris claro */
+  --text-color: #2c3e50;         /* Texto principal */
+  --text-muted: #7f8c8d;         /* Texto secundario */
+}
+
+.view-doctors-container {
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+  transition: all 0.3s ease;
+  padding-bottom: 20px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  position: relative; /* Asegura posicionamiento correcto */
+}
+
+.view-doctors-container h3 {
+  background: linear-gradient(135deg, var(--tertiary-color), var(--secondary-color));
+  color: white;
+  padding: 15px 25px;
+  margin: 0 0 20px 0;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.view-doctors-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 0;
+}
+
+.view-doctors-table thead {
+  background: linear-gradient(135deg, var(--tertiary-color), var(--secondary-color));
+}
+
+.view-doctors-table thead tr th {
+  color: white !important;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border: none;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent !important; /* Asegura que el background del th no sobreescriba el del thead */
+}
+
+/* Eliminamos esta regla que está causando el conflicto */
+/* .view-doctors-table th {
+  background-color: #f0f5fa;
+  color: #2c3e50;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+} */
+
+/* Contenedor responsivo para la tabla */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.doctor-avatar {
+  border: 3px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-info {
+  padding: 8px 0;
+}
+
+.deactivate-btn {
+  width: 100%;
+  margin-top: 5px;
+  font-weight: 500;
+  background-color: var(--warning-color);
+  border-color: var(--warning-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+}
+
+.deactivate-btn:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(243, 156, 18, 0.2);
+}
+
+/* Estilos para el modal personalizado */
+.custom-modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Valor muy alto para asegurar que esté por encima de todo */
+}
+
+.custom-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+}
+
+.custom-modal-container {
+  background-color: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  z-index: 10000;
+  box-shadow: 0 15px 35px rgba(50,50,93,.2), 0 5px 15px rgba(0,0,0,.15);
+  animation: modalFadeIn 0.3s ease;
+  overflow: hidden;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-modal-header {
+  background: linear-gradient(135deg, var(--tertiary-color), var(--secondary-color));
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none;
+}
+
+.custom-modal-title {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.custom-modal-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.custom-modal-close:hover {
+  opacity: 1;
+}
+
+.custom-modal-body {
+  padding: 25px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.custom-modal-footer {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.custom-modal-btn-cancel {
+  background-color: #95a5a6;
+  border-color: #95a5a6;
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+.custom-modal-btn-confirm {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+.warning-icon {
+  color: var(--warning-color);
+}
+
+/* Estilos para el campo de motivo de baja */
+.reason-textarea-container {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.reason-textarea-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.reason-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background-color: #f9f9f9;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.reason-textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(41, 128, 185, 0.15);
+  background-color: white;
+}
+
+.reason-textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* Efecto hover para botones */
+.deactivate-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.deactivate-btn:hover::before {
+  left: 0;
+}
+
+/* Estilos responsivos para móviles */
+@media (max-width: 768px) {
+  .view-doctors-table {
+    border: 0;
+  }
+  
+  .view-doctors-table thead {
+    display: none;
+  }
+  
+  .view-doctors-table tr {
+    margin-bottom: 20px;
+    display: block;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .view-doctors-table td {
+    display: block;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 45%;
+    min-height: 60px;
+  }
+  
+  .view-doctors-table td:last-child {
+    border-bottom: 0;
+  }
+  
+  .view-doctors-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 40%;
+    padding-right: 10px;
+    font-weight: 700;
+    text-align: left;
+    color: #555;
+  }
+  
+  .doctor-info {
+    justify-content: flex-end;
+    padding: 0;
+  }
+  
+  .doctor-avatar {
+    margin: 0 auto;
+    display: block;
+  }
+  
+  td[data-label="Foto"] {
+    text-align: center;
+    padding-left: 10px;
+  }
+  
+  .deactivate-btn {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+  }
+  
+  .view-doctors-container h3 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .custom-modal-footer {
+    flex-direction: column;
+  }
+
+  .custom-modal-btn-cancel,
+  .custom-modal-btn-confirm {
+    width: 100%;
+  }
+  
+  .reason-textarea {
+    min-height: 80px;
+  }
+}

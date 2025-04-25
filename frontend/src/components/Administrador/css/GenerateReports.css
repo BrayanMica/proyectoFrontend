@@ -1,0 +1,329 @@
+/* GenerateReports.css - Diseño Profesional */
+
+.reports-container {
+  padding: 1.5rem;
+  background-color: #f9fafc;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reports-container h3 {
+  margin-bottom: 1.5rem;
+  color: #1a3b72;
+  font-weight: 700;
+  font-size: 1.75rem;
+  border-bottom: 3px solid #e3e9f3;
+  padding-bottom: 0.75rem;
+  position: relative;
+}
+
+.reports-container h3::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background-color: #3e7bfa;
+}
+
+/* Controles de formulario */
+.report-controls {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+  border: 1px solid #e9ecef;
+}
+
+.reports-container .form-label {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.reports-container .form-select,
+.reports-container .form-control {
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d1d9e6;
+  box-shadow: none;
+  font-size: 0.95rem;
+  color: #495057;
+  transition: all 0.2s ease;
+  background-color: #f8f9fa;
+}
+
+.reports-container .form-select:focus,
+.reports-container .form-control:focus {
+  border-color: #3e7bfa;
+  box-shadow: 0 0 0 0.25rem rgba(62, 123, 250, 0.15);
+  background-color: #fff;
+}
+
+.reports-container .form-control::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
+/* Tarjeta del reporte */
+.reports-container .card {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  border-radius: 12px;
+  border: none;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  background-color: white;
+}
+
+.reports-container .card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.reports-container .card-header {
+  background-color: #f1f5fd;
+  border-bottom: 1px solid #e3e9f3;
+  padding: 1.25rem 1.5rem;
+  position: relative;
+}
+
+.reports-container .card-header h5 {
+  margin-bottom: 0;
+  font-weight: 700;
+  color: #1a3b72;
+  font-size: 1.25rem;
+}
+
+.reports-container .card-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, #3e7bfa, transparent);
+}
+
+.reports-container .card-body {
+  padding: 1.75rem;
+}
+
+/* Tabla de datos */
+.table-container {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.reports-container .table {
+  margin-bottom: 0;
+}
+
+.reports-container .table-header {
+  background-color: #f1f5fd;
+}
+
+.reports-container .table th {
+  padding: 0.9rem 1.2rem;
+  font-weight: 600;
+  color: #1a3b72;
+  border-bottom: 2px solid #e3e9f3;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.reports-container .table td {
+  padding: 0.8rem 1.2rem;
+  vertical-align: middle;
+  color: #495057;
+  border-color: #f1f5fd;
+}
+
+.reports-container .table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.reports-container .table tbody tr:hover {
+  background-color: #f8faff;
+}
+
+.reports-container .table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(241, 245, 253, 0.4);
+}
+
+/* Estilos para spinner de carga */
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+}
+
+.reports-container .spinner-border {
+  color: #3e7bfa;
+  width: 3rem;
+  height: 3rem;
+}
+
+.spinner-text {
+  margin-top: 1rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* Botones de exportación */
+.export-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.export-buttons .btn-primary {
+  background-color: #3e7bfa;
+  border-color: #3e7bfa;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 10px rgba(62, 123, 250, 0.25);
+}
+
+.export-buttons .btn-primary:hover:not(:disabled) {
+  background-color: #2d6be5;
+  border-color: #2d6be5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(62, 123, 250, 0.3);
+}
+
+.export-buttons .btn-primary:disabled {
+  background-color: #a2b9e7;
+  border-color: #a2b9e7;
+  cursor: not-allowed;
+}
+
+/* Alerta de información */
+.reports-container .alert-info {
+  background-color: #e0f3ff;
+  border-color: #b8e2ff;
+  color: #0c5185;
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.reports-container .alert-danger {
+  background-color: #ffe0e3;
+  border-color: #ffb8be;
+  color: #850c22;
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Icono de información */
+.info-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #0c5185;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.info-icon::before {
+  content: "i";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-family: serif;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 992px) {
+  .export-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .reports-container {
+    padding: 1rem;
+  }
+  
+  .reports-container h3 {
+    font-size: 1.5rem;
+  }
+  
+  .reports-container .card-header h5 {
+    font-size: 1.1rem;
+  }
+  
+  .reports-container .table th,
+  .reports-container .table td {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .reports-container {
+    padding: 0.75rem;
+  }
+  
+  .report-controls {
+    padding: 1rem;
+  }
+  
+  .reports-container .card-body {
+    padding: 1.25rem;
+  }
+  
+  .reports-container .table th,
+  .reports-container .table td {
+    padding: 0.6rem 0.7rem;
+    font-size: 0.85rem;
+  }
+  
+  .export-buttons .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reports-container .card {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Customización para PDF link */
+.pdf-link {
+  text-decoration: none;
+  display: inline-block;
+}
